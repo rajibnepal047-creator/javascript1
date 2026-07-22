@@ -1,0 +1,81 @@
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+input{
+    width:250px;
+    padding:10px;
+    font-size:16px;
+    margin:10px;
+}
+
+.password-box{
+    display:flex;
+    align-items:center;
+}
+
+.password-box button{
+    border:none;
+    background:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+#greeting{
+    font-size:22px;
+    font-weight:bold;
+}
+
+#status{
+    color:red;
+    font-size:20px;
+    font-weight:bold;
+}
+/* Hide browser default password reveal icon */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+/* Dark Mode */
+.dark{
+    background:#121212;
+    color:white;
+}
+
+.dark .container{
+    background:#222;
+    color:white;
+}
+
+.dark input{
+    background:#333;
+    color:white;
+    border:1px solid white;
+}
+
+.dark #greeting{
+    color:white;
+}
+
+
+/* Theme Button */
+#themeToggle{
+    padding:10px 15px;
+    margin-bottom:15px;
+    cursor:pointer;
+    border:none;
+    border-radius:5px;
+}
