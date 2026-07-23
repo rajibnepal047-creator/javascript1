@@ -3,36 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Checker</title>
+    <title>Password Strength Checker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    
 
-    <h2>Welcome</h2>
+    <button id="themeBtn"> Dark Mode</button>
 
-    <!-- Name Input -->
+    <h2>Live Greeting & Password Strength Checker</h2>
+
     <input type="text" id="name" placeholder="Enter your name">
 
     <p id="greeting">Hello!</p>
 
-
-    <!-- Password Input with Eye -->
     <div class="password-box">
-        <input type="password" id="password" placeholder="Enter password">
-        <button id="togglePassword">👁</button>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button id="eye">👁️</button>
     </div>
 
     <p id="status">Weak</p>
-    <button id="themeToggle"> Dark Mode</button>
 
 </div>
 
-
 <script src="script.js"></script>
-
 
 </body>
 </html>

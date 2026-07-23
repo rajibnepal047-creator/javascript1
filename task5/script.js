@@ -4,68 +4,47 @@ const greeting = document.getElementById("greeting");
 const password = document.getElementById("password");
 const status = document.getElementById("status");
 
-const togglePassword = document.getElementById("togglePassword");
-
-const themeToggle = document.getElementById("themeToggle");
-
+const eye = document.getElementById("eye");
+const themeBtn = document.getElementById("themeBtn");
 
 // Live Greeting
-nameInput.addEventListener("input", function(){
-
-    if(nameInput.value.trim() === ""){
-        greeting.textContent = "Hello!";
-    }
-    else{
-        greeting.textContent = `Hello, ${nameInput.value}!`;
-    }
-
+nameInput.addEventListener("input", () => {
+    greeting.textContent =
+        nameInput.value.trim() ?
+        `Hello, ${nameInput.value}!` :
+        "Hello!";
 });
 
+// Password Strength
+password.addEventListener("input", () => {
 
-// Boolean Password Function (returns 1 or 0)
-function checkPassword(value){
+    // Remove spaces automatically
+    password.value = password.value.replace(/\s/g, "");
 
-    let hasLength = value.length >= 6;
-    let hasNumber = /\d/.test(value);
+    const value = password.value;
 
-    return (hasLength && hasNumber) ? 1 : 0;
-}
+    const strong =
+        value.length >= 6 &&
+        /\d/.test(value) &&
+        !/\s/.test(value);
 
-
-// Password Checker
-password.addEventListener("input", function(){
-result === 1 
-    ? (status.textContent = "Strong", status.style.color = "green")
-    : (status.textContent = "Weak", status.style.color = "red");
-
+    status.textContent = strong ? "Strong" : "Weak";
+    status.style.color = strong ? "green" : "red";
 });
 
-
-// Password Eye Toggle
-togglePassword.addEventListener("click", function(){
-
-    if(password.type === "password"){
-        password.type = "text";
-        togglePassword.textContent = "🙈";
-    }
-    else{
-        password.type = "password";
-        togglePassword.textContent = "👁";
-    }
-
+// Show / Hide Password
+eye.addEventListener("click", () => {
+    password.type = password.type === "password" ? "text" : "password";
+    eye.textContent = password.type === "password" ? "👁️" : "🙈";
 });
 
-
-// Dark Mode / Light Mode
-themeToggle.addEventListener("click", function(){
+// Dark / Light Mode
+themeBtn.addEventListener("click", () => {
 
     document.body.classList.toggle("dark");
 
-    if(document.body.classList.contains("dark")){
-        themeToggle.textContent = " Light Mode";
-    }
-    else{
-        themeToggle.textContent = " Dark Mode";
-    }
-
+    themeBtn.textContent =
+        document.body.classList.contains("dark")
+        ? " Light Mode"
+        : " Dark Mode";
 });
