@@ -57,3 +57,8 @@ button{
     color:red;
     font-weight:bold;
 }
+#themeBtn{
+    margin-top:15px;
+    padding:10px 20px;
+    cursor:pointer;
+}
